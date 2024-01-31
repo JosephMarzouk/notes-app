@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:notes_app/widgets/customNoteItem.dart';
 import 'package:notes_app/widgets/customsearchicon.dart';
 import 'package:notes_app/widgets/homeviewbody.dart';
 
@@ -25,7 +26,14 @@ class HomeView extends StatelessWidget {
           )
         ],
       ),
-      body: const HomeViewBody(),
+      body: Padding(
+        padding: const EdgeInsets.all(10),
+        child: Column(
+          children: [
+            NoteItem(itemColor: Color(0xffe24040),)
+          ],
+        ),
+      ),
     );
   }
 }
