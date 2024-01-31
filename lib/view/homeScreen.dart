@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:notes_app/widgets/customNoteItem.dart';
+import 'package:notes_app/widgets/addnotebottomsheet.dart';
+import 'package:notes_app/widgets/customListView.dart';
 import 'package:notes_app/widgets/customsearchicon.dart';
-import 'package:notes_app/widgets/homeviewbody.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -27,13 +27,24 @@ class HomeView extends StatelessWidget {
         ],
       ),
       body: Padding(
-        padding: const EdgeInsets.all(10),
+        padding: const EdgeInsets.only(left: 8, right: 8),
         child: Column(
           children: [
-            NoteItem(itemColor: Color(0xffe24040),)
+            Expanded(child: NotesListView(itemColor: const Color(0xff19c37d))),
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          showModalBottomSheet(context: context, builder: (context)
+          {
+            return AddNoteBottomSheet();
+          });
+        },
+        child: const Icon(Icons.add),
       ),
     );
   }
 }
+
+
