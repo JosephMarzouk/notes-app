@@ -22,15 +22,15 @@ class HomeView extends StatelessWidget {
         actions: const [
           Padding(
             padding: EdgeInsets.only(top: 17, right: 13),
-            child: CustomSearchIcon(),
+            child: CustomSearchIcon(icon: Icons.search,),
           )
         ],
       ),
-      body: Padding(
-        padding: const EdgeInsets.only(left: 8, right: 8),
+      body: const Padding(
+        padding: EdgeInsets.only(left: 8, right: 8),
         child: Column(
           children: [
-            Expanded(child: NotesListView(itemColor: const Color(0xff19c37d))),
+            Expanded(child: NotesListView(itemColor: Color(0xff19c37d))),
           ],
         ),
       ),
@@ -40,7 +40,7 @@ class HomeView extends StatelessWidget {
             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
             context: context, builder: (context)
           {
-            return AddNoteBottomSheet();
+            return const AddNoteBottomSheet();
           });
         },
         child: const Icon(Icons.add),
