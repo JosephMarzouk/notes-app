@@ -379,6 +379,7 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.4"
+<<<<<<< HEAD
   nested:
     dependency: transitive
     description:
@@ -387,6 +388,8 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.0"
+=======
+>>>>>>> 07d0aec2bb6526a2a4d932a9c4b5641892e9ba99
   package_config:
     dependency: transitive
     description:
@@ -475,6 +478,7 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.5.1"
+<<<<<<< HEAD
   provider:
     dependency: transitive
     description:
@@ -483,6 +487,8 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "6.1.1"
+=======
+>>>>>>> 07d0aec2bb6526a2a4d932a9c4b5641892e9ba99
   pub_semver:
     dependency: transitive
     description:
