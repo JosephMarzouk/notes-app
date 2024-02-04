@@ -268,7 +268,7 @@ packages:
     source: hosted
     version: "2.3.1"
   hive:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: hive
       sha256: "8dcf6db979d7933da8217edcec84e9df1bdb4e4edc7fc77dbd5aa74356d6d941"
@@ -379,7 +379,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.4"
-<<<<<<< HEAD
+  modal_progress_hud_nsn:
+    dependency: "direct main"
+    description:
+      name: modal_progress_hud_nsn
+      sha256: "7d1b2eb50da63c994f8ec2da5738183dbc8235a528e840ecbf67439adb7a6cc2"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.5.1"
   nested:
     dependency: transitive
     description:
@@ -388,8 +395,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.0"
-=======
->>>>>>> 07d0aec2bb6526a2a4d932a9c4b5641892e9ba99
   package_config:
     dependency: transitive
     description:
@@ -478,7 +483,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.5.1"
-<<<<<<< HEAD
   provider:
     dependency: transitive
     description:
@@ -487,8 +491,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "6.1.1"
-=======
->>>>>>> 07d0aec2bb6526a2a4d932a9c4b5641892e9ba99
   pub_semver:
     dependency: transitive
     description:
