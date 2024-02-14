@@ -30,7 +30,7 @@ class _addNoteFromStateState extends State<addNoteFrom> {
         child: Column(
           children: [
             // Spacer(flex: 1,),
-           const SizedBox(
+            const SizedBox(
               height: 15,
             ),
             CustomTextField(
@@ -40,7 +40,7 @@ class _addNoteFromStateState extends State<addNoteFrom> {
               },
             ),
             //Spacer(flex: 2,),
-           const SizedBox(
+            const SizedBox(
               height: 45,
             ),
             CustomTextField(
@@ -51,25 +51,33 @@ class _addNoteFromStateState extends State<addNoteFrom> {
               },
             ),
             //Spacer(flex: 5,),
-           const SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            CustomButton(
-              buttonText: 'Add',
-              onTap: () {
-                if (formKey.currentState!.validate()) {
-                  formKey.currentState!.save();
-                  var noteModel= NoteModel(title: title!, subtitle:content! , date: DateTime.now().toString(), color:Colors.blue.value);
-                  BlocProvider.of<AddNoteCubit>(context).addNote(noteModel);
-                }
-                {
-                  autovalidateMode = AutovalidateMode.always;
-                }
-                setState(() {});
+            BlocBuilder<AddNoteCubit, AddNoteState>(
+              builder: (context, state) {
+                return CustomButton(
+                  isLoading: state is AddNoteLoading? true : false,
+                  buttonText: 'Add',
+                  onTap: () {
+                    if (formKey.currentState!.validate()) {
+                      formKey.currentState!.save();
+                      var noteModel = NoteModel(
+                          title: title!,
+                          subtitle: content!,
+                          date: DateTime.now().toString(),
+                          color: Colors.blue.value);
+                      BlocProvider.of<AddNoteCubit>(context).addNote(noteModel);
+                    } else {
+                      autovalidateMode = AutovalidateMode.always;
+                      setState(() {});
+                    }
+                  },
+                );
               },
             ),
             //Spacer(flex: 1,)
-           const SizedBox(
+            const SizedBox(
               height: 15,
             ),
           ],
