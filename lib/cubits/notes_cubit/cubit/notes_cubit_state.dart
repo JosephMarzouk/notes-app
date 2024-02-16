@@ -13,9 +13,3 @@ final class NotesSuccess extends NotesCubitState {
 
   NotesSuccess({required this.notes});
 }
-
-final class NotesFailure extends NotesCubitState {
-  final String errMessage;
-
-  NotesFailure( this.errMessage);
-}

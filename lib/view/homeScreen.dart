@@ -36,7 +36,7 @@ class HomeView extends StatelessWidget {
           padding: EdgeInsets.only(left: 8, right: 8),
           child: Column(
             children: [
-              Expanded(child: NotesListView(itemColor: Color(0xff19c37d))),
+              Expanded(child: NotesListView()),
             ],
           ),
         ),
@@ -48,7 +48,7 @@ class HomeView extends StatelessWidget {
                     borderRadius: BorderRadius.circular(16)),
                 context: context,
                 builder: (context) {
-                  return AddNoteBottomSheet();
+                  return const AddNoteBottomSheet();
                 });
           },
           child: const Icon(Icons.add),
