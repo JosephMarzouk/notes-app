@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:notes_app/cubits/notes_cubit/cubit/notes_cubit_cubit.dart';
 import 'package:notes_app/view/addnotebottomsheet.dart';
-import 'package:notes_app/widgets/customsearchicon.dart';
 import 'package:notes_app/widgets/notes_view_body.dart';
 
 class HomeView extends StatelessWidget {
@@ -10,42 +7,20 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => NotesCubitCubit(),
-      child: Scaffold(
-        appBar: AppBar(
-          forceMaterialTransparency: true,
-          toolbarHeight: 70,
-          title: const Padding(
-            padding: EdgeInsets.only(top: 20),
-            child: Text(
-              'Notes',
-              style: TextStyle(fontSize: 25),
-            ),
-          ),
-          actions: const [
-            Padding(
-              padding: EdgeInsets.only(top: 17, right: 13),
-              child: CustomSearchIcon(
-                icon: Icons.search,
-              ),
-            )
-          ],
-        ),
-        body: const NotesViewBody(),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            showModalBottomSheet(
-                isScrollControlled: true,
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(16)),
-                context: context,
-                builder: (context) {
-                  return const AddNoteBottomSheet();
-                });
-          },
-          child: const Icon(Icons.add),
-        ),
+    return Scaffold(
+      body: const NotesViewBody(),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          showModalBottomSheet(
+              isScrollControlled: true,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(16)),
+              context: context,
+              builder: (context) {
+                return const AddNoteBottomSheet();
+              });
+        },
+        child: const Icon(Icons.add),
       ),
     );
   }
