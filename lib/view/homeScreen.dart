@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notes_app/cubits/notes_cubit/cubit/notes_cubit_cubit.dart';
 import 'package:notes_app/view/addnotebottomsheet.dart';
-import 'package:notes_app/widgets/customListView.dart';
 import 'package:notes_app/widgets/customsearchicon.dart';
+import 'package:notes_app/widgets/notes_view_body.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -32,14 +32,7 @@ class HomeView extends StatelessWidget {
             )
           ],
         ),
-        body: const Padding(
-          padding: EdgeInsets.only(left: 8, right: 8),
-          child: Column(
-            children: [
-              Expanded(child: NotesListView()),
-            ],
-          ),
-        ),
+        body: const NotesViewBody(),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
             showModalBottomSheet(
