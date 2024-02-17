@@ -13,12 +13,8 @@ class AddNoteBottomSheet extends StatelessWidget {
       create: (context) => AddNoteCubit(),
       child: BlocConsumer<AddNoteCubit, AddNoteState>(
         listener: (context, state) {
-          if (state is AddNoteFailur) {
-            
-          
-          }
+          if (state is AddNoteFailur) {}
           if (state is AddNoteSuccess) {
-            
             Navigator.pop(context);
             BlocProvider.of<NotesCubitCubit>(context).fetchAllNotes();
           }
@@ -26,12 +22,12 @@ class AddNoteBottomSheet extends StatelessWidget {
         builder: (context, state) {
           return AbsorbPointer(
             absorbing: state is AddNoteLoading ? true : false,
-            child:  Padding(
+            child: Padding(
               padding: EdgeInsets.only(
                   right: 16,
                   left: 16,
                   bottom: MediaQuery.of(context).viewInsets.bottom),
-              child:const SingleChildScrollView(child: addNoteFrom()),
+              child: const SingleChildScrollView(child: addNoteFrom()),
             ),
           );
         },

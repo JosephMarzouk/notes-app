@@ -14,7 +14,9 @@ class NoteItem extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         Navigator.push(context, MaterialPageRoute(builder: ((context) {
-          return const EditNoteView();
+          return EditNoteView(
+            note: note,
+          );
         })));
       },
       child: Container(
@@ -33,7 +35,7 @@ class NoteItem extends StatelessWidget {
                     ),
                     subtitle: Padding(
                       padding: const EdgeInsets.only(top: 8.0),
-                      child: Text(note.subtitle,
+                      child: Text(note.content,
                           style: TextStyle(
                               color: Colors.black.withOpacity(0.4),
                               fontSize: 15)),
@@ -41,7 +43,8 @@ class NoteItem extends StatelessWidget {
                     trailing: IconButton(
                       onPressed: () {
                         note.delete();
-                        BlocProvider.of<NotesCubitCubit>(context).fetchAllNotes();
+                        BlocProvider.of<NotesCubitCubit>(context)
+                            .fetchAllNotes();
                       },
                       icon: const Icon(
                         Icons.delete,
