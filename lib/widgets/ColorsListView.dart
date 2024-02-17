@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:notes_app/cubits/add_note_cubit/add_note_cubit.dart';
 
 class CustomItem extends StatelessWidget {
   const CustomItem({super.key, required this.isSelected, required this.color});
@@ -35,9 +37,9 @@ class ColorsListView extends StatefulWidget {
 class _ColorsListViewState extends State<ColorsListView> {
   int currentIndex = 0;
   List<Color> colors = const [
+  Color(0xFF3949AB), // Mystical Midnight Blue
   Color(0xFFD81B60), // Raspberry Pink
   Color(0xFF4CAF50), // Enchanted Emerald
-  Color(0xFF3949AB), // Mystical Midnight Blue
   Color(0xFFFFC107), // Sunshine Yellow
   Color(0xFF9C27B0), // Velvet Violet
   Color(0xFFFF5722), // Mango Tango Orange
@@ -57,6 +59,7 @@ class _ColorsListViewState extends State<ColorsListView> {
               child: GestureDetector(
                   onTap: () {
                     currentIndex = index;
+                    BlocProvider.of<AddNoteCubit>(context).color= colors[index];
                     setState(() {});
                   },
                   child: CustomItem(
