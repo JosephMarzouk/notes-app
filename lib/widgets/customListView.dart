@@ -13,6 +13,19 @@ class NotesListView extends StatelessWidget {
       builder: (context, state) {
         List<NoteModel> notes =
             BlocProvider.of<NotesCubitCubit>(context).notes ?? [];
+            notes.sort((a, b) {
+          if (a.color == Colors.red && b.color != Colors.red) {
+            return -1;
+          } else if (a.color != Colors.red && b.color == Colors.red) {
+            return 1;
+          } else if (a.color == Color(0xFFFFC107) && b.color == Color(0xFF4CAF50)) {
+            return -1;
+          } else if (a.color == Color(0xFF4CAF50) && b.color == Color(0xFFFFC107)) {
+            return 1;
+          } else {
+            return 0;
+          }
+        });
         return ListView.builder(
             itemCount: notes.length,
             itemBuilder: (context, index) {

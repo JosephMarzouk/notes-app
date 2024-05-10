@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notes_app/cubits/notes_cubit/cubit/notes_cubit_cubit.dart';
+import 'package:notes_app/widgets/EditNoteListColor.dart';
 import 'package:notes_app/widgets/customAppBar.dart';
 import 'package:notes_app/widgets/custom_text_field.dart';
 import 'package:notes_app/models/note_model.dart';
@@ -58,7 +59,9 @@ class _EditNoteViewState extends State<EditNoteView> {
             ),
             const Spacer(
               flex: 6,
-            )
+            ),
+            EditNoteColorList(note: widget.note,)
+            
           ],
         ),
       ),
